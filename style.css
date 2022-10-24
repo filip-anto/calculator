@@ -1,31 +1,31 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     height: 600px;
     text-align: center;
 }
 
-.container{
-    background-color:rgb(231, 229, 229);
-    padding:20px;
-    padding-bottom:30px;
-    border-style:solid;
+.container {
+    background-color: rgb(231, 229, 229);
+    padding: 20px;
+    padding-bottom: 30px;
+    border-style: solid;
     border-width: 5px;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
-.screen{
-    background-color:rgb(49, 75, 9);
+.screen {
+    background-color: rgb(49, 75, 9);
     padding: 10px 5px 5px;
-    margin-bottom:30px;
-    border-radius:3px;
+    margin-bottom: 30px;
+    border-radius: 3px;
     text-align: right;
-    font-size:20px;
+    font-size: 20px;
     font-weight: 800;
-    width:260px;
-    flex-grow:0;
+    width: 260px;
+    flex-grow: 0;
 }
 
 .row {
@@ -33,29 +33,31 @@ body {
     justify-content: center;
     gap: 10px;
     margin-bottom: 10px;
-    max-width:270px;
+    max-width: 270px;
 }
 
 .number,
 .functionality,
 .operator {
-    font-size:15px;
+    font-size: 15px;
     padding: 0px;
     margin: 0px;
     min-width: 60px;
     min-height: 40px;
-    
+
     border-style: double;
     border-radius: 10px;
 }
 
-.number{
+.number {
     background-color: orange;
 }
-.operator,.functionality{
+
+.operator,
+.functionality {
     background-color: rgb(70, 70, 241);
 }
 
-#zero{
-    flex-grow:2;
+#zero {
+    flex-grow: 2;
 }

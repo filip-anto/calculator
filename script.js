@@ -19,12 +19,12 @@ function reset() {
     operand1 = null;
     operand2 = null;
     operator = null;
-    float = false;
-    document.getElementById("setFloat").disabled = false;
+    removeFloat();
 }
 
 let keyPressed;
 keyPressed = document.addEventListener("keydown", (e) => pressed(e));
+
 function pressed(e) {
     if (e.key >= 0 && e.key < 10) {
         setOperand(Number(e.key));
@@ -34,6 +34,9 @@ function pressed(e) {
     }
     if ((e.key === "=" || e.key === "Enter") && operand2 !== null) {
         operate(Number(operand1), Number(operand2), operator);
+    }
+    if ((e.key === "Backspace")) {
+        deleteNumber();
     }
 }
 
@@ -85,15 +88,13 @@ function deleteNumber() {
             document.getElementsByClassName("screen")[0].innerHTML = operand1;
         }
         if (operand1 % 1 === 0) {
-            float = false;
-            document.getElementById("setFloat").disabled = false;
+            removeFloat();
         }
     } else {
         operand2 = Number(operand2.toString().split("").slice(0, -1).join(""));
         document.getElementsByClassName("screen")[0].innerHTML = operand2;
         if (operand1 % 1 === 0) {
-            float = false;
-            document.getElementById("setFloat").disabled = false;
+            removeFloat();
         }
     }
 }
@@ -112,6 +113,11 @@ function makeFloat() {
     document.getElementsByClassName("screen")[0].innerHTML += ".";
     float = true;
     document.getElementById("setFloat").disabled = true;
+}
+
+function removeFloat() {
+    float = false;
+    document.getElementById("setFloat").disabled = false;
 }
 
 function clicked(target) {
